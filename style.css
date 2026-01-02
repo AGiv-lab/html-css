@@ -14,6 +14,12 @@ h1, h2 {
     text-align: center;
 }
 
+#success-stories h3 {
+    text-align: center;
+    color: #874c0e;
+    font-weight: normal;
+}
+
 p {
     margin-bottom: 16px;
 }
@@ -55,7 +61,22 @@ nav a {
     font-weight: bold;
 
 }
-         
+
+.go-home {
+    color: #1e5a2f;
+}
+
+.go-home:hover,
+.go-home:focus {
+  color: #1f4f2d;
+  text-decoration: underline;  
+}
+
+.go-home:focus {
+    outline: 2px solid #1e5a2f;
+    outline-offset: 2px;
+}
+
 .intro-figure {
     max-width: 800px;
     margin: 40px auto;
@@ -158,8 +179,8 @@ footer {
 }
 
 @media (max-width: 768px) { 
-    .about-gallery {
+    .card {
         flex-direction: column;
-        gap: 20px;
+        text-align: center;
     }
 }
