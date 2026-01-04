@@ -89,7 +89,12 @@ nav a {
     border-radius: 8px;
 }
 
-.hero-card h3::after {
+h3 { 
+    text-align: center;
+    color: #6b451d;
+}
+
+h3::after {
     content:"";
     display: block;
     width: 60%;
