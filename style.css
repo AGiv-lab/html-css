@@ -9,10 +9,15 @@ body {
 
 }
 
-h1, 
-h2 {
-    margin: 0 0 10px;
+h1 {
+    font-size: 3rem;
+    color: #5b014d;
+    letter-spacing: 1px;
     text-align: center;
+
+}
+
+h2 {
     color:#6b451d;
 }
 
@@ -31,7 +36,7 @@ a:hover {
 }
 
 .go-home {
-    color: #1e5a2f;
+    color: #3bb236;
 }
 
 .go-home:hover,
@@ -50,7 +55,7 @@ header {
 }
 
 nav { 
-    background-color: #e3c6a8;
+    background-color: #9b7d60;
     padding: 10px 20px;       
 }
 
@@ -136,6 +141,17 @@ h3::after {
 
 }
 
+.about-page nav {
+    background-color: #a98ca2;
+    border-bottom: 2px solid #5b014d;
+
+    .about-page nav a: hoover,
+    .about-page nav a: :focus {
+        color: #fff2f8;
+        text-decoration: none;
+    }
+}
+
 .about-gallery {
     max-width: 900px;
     margin: 40px auto;
@@ -216,8 +232,11 @@ footer {
     .about-gallery {
         flex-direction: column;
     }
-
     .card {
         text-align: center;
+    }
+
+    h1 {
+        font-size: 2.3rem;
     }
 }
