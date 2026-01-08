@@ -19,6 +19,7 @@ h1 {
 
 h2 {
     color:#6b451d;
+    text-align: center;
 }
 
 p {
@@ -42,12 +43,7 @@ a:hover {
 .go-home:hover,
 .go-home:focus {
   color: #1f4f2d;
-  text-decoration: underline;  
-}
-
-.go-home:focus {
-    outline: 2px solid #1e5a2f;
-    outline-offset: 2px;
+  text-decoration: underline; 
 }
 
 header {
@@ -55,7 +51,7 @@ header {
 }
 
 nav { 
-    background-color: #9b7d60;
+    background-color: #d8eba5;
     padding: 10px 20px;       
 }
 
@@ -141,38 +137,57 @@ h3::after {
 
 }
 
-.about-page nav {
-    background-color: #a98ca2;
-    border-bottom: 2px solid #5b014d;
+.about {
+  color: #8e0393; 
 
-    .about-page nav a: hoover,
-    .about-page nav a: :focus {
-        color: #fff2f8;
-        text-decoration: none;
-    }
 }
+ .about:hover,
+ .about:focus {
+    color: #5b014d;
+
+ }
+
+.about-page nav {
+    background-color: #dcb1d2;
+    border-bottom: 2px solid #5b014d;
+    }
+
+    .about-page .go-home {
+        color: #3bb236;
+    }
 
 .about-gallery {
     max-width: 900px;
     margin: 40px auto;
     padding: 10px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-
+    display: flex;          /* horizontal layout */
+    gap: 20px;              /* space between cards */
+    flex-wrap: wrap;         /* wrap to next row if not enough space */
+    justify-content: center; /* center the cards */
 }
 
 .card {
-    flex: 1;
-    min-width: 280px;
-    background-color: #fff;
-    border: 1px solid #c8a98a;
+    flex: 1 1 300px;       /* grow/shrink, min width 300px */
+    max-width: 300px;      /* prevents huge cards */
+    background-color: #e3d1d1;
     border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, ease, box-shadow 0.2s ease; 
-
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(31, 30, 30, 0.1);
+    text-align: center;    /* text under image */
 }
+
+ .image-box img {
+    width: 100%;             /* fill card width */
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+
+ }
+
+ .text-box {
+     padding: 10px;
+
+ }
 
 .card:hover {
     transform: translateY(-5px);
@@ -183,7 +198,7 @@ h3::after {
 .image-box {
     height: 200px;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 10px;
 
 }
 
