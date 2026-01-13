@@ -73,6 +73,8 @@ nav a {
     font-weight: bold;
 
 }
+
+
 .hero-card {
     max-width: 800px;
     margin: 40px auto;
@@ -241,6 +243,18 @@ footer {
     text-align: center;
     background-color: #e3c6a8;
 
+}
+
+#welcome-message {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff7ec;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #5b014d;
 }
 
 @media (max-width: 768px) { 
