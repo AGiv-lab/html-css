@@ -1,4 +1,18 @@
+'use strict'
+
 console.log("JS is working");
+
+document.getElementById("btnAdopt").addEventListener("click", () => {
+  const name = prompt("I am looking to adopt?");
+  const subtitle = document.getElementById("subtitle");
+ 
+  subtitle.textContent = name
+    ? `Welcome, ${Adopter}! 🎄`
+    : "Welcome, friend! 🎄";
+});
+
+
+/* Welcome prompts with 3 choices
 
 const welcomeMessage = document.querySelector("#welcome-message");
 
@@ -24,5 +38,8 @@ if (userReason === "1") {
 } else {
   welcomeMessage.textContent =
     "Woof! 🐾 Take a look around and let us know how we can help.";
-}
-    
+   }   
+  
+   */
+
+
