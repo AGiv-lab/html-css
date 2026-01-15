@@ -252,10 +252,60 @@ footer {
   background-color: #fff7ec;
   border-radius: 8px;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #5b014d;
+  color: #9f03a4;
 }
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 20px auto;
+}
+
+.action-buttons button {
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#btnAdopt {
+  background-color: #f4bfa4;
+  color: #a74102;
+}
+
+#btnAdopt:hover {
+  background-color: #8d3d07;
+}
+
+/* Volunteer – light green */
+#btnVolunteer {
+  background-color: #e7ffc8;
+  color: #64a143;
+}
+
+#btnVolunteer:hover {
+  background-color: #266b17;
+}
+
+#btnSurrender {
+  background-color: #dcb1d2;
+  color: #8327a4;
+}
+
+#btnSurrender:hover {
+  background-color: #5b014d;
+}
+
+/* Small interaction polish */
+.action-buttons button:hover {
+  transform: translateY(-2px);
+}
+
 
 @media (max-width: 768px) { 
     .about-gallery {
