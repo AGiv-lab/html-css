@@ -36,14 +36,14 @@ document.getElementById("btnVolunteer")
 
 document.getElementById("btnSurrender")
   .addEventListener("click", () => handleUserAction("surrender"));
-  
+
   const name = prompt("I am looking to adopt?");
   const subtitle = document.getElementById("subtitle");
  
   subtitle.textContent = name
     ? `Welcome, ${Adopter}! 🎄`
     : "Welcome, friend! 🎄";
-});
+};
 
 
 /* Welcome prompts with 3 choices

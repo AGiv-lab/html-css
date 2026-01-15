@@ -37,7 +37,7 @@ a:hover {
 }
 
 .go-home {
-    color: #39be35b8;
+    color: #09b603b8;
 }
 
 .go-home:hover,
@@ -155,7 +155,7 @@ h3::after {
     }
 
     .about-page .go-home {
-        color: #3bb236;
+        color: #0f970b;
     }
 
 .about-gallery {
@@ -249,7 +249,7 @@ footer {
   max-width: 800px;
   margin: 20px auto;
   padding: 15px;
-  background-color: #fff7ec;
+  background-color: #fbf7ba;
   border-radius: 8px;
   text-align: center;
   font-size: 1.3rem;
@@ -279,17 +279,17 @@ footer {
 }
 
 #btnAdopt:hover {
-  background-color: #8d3d07;
+  background-color: #faae3b;
 }
 
 /* Volunteer – light green */
 #btnVolunteer {
   background-color: #e7ffc8;
-  color: #64a143;
+  color: #428f19;
 }
 
 #btnVolunteer:hover {
-  background-color: #266b17;
+  background-color: #c2ee6f;
 }
 
 #btnSurrender {
@@ -298,14 +298,13 @@ footer {
 }
 
 #btnSurrender:hover {
-  background-color: #5b014d;
+  background-color: #f391e4;
 }
 
 /* Small interaction polish */
-.action-buttons button:hover {
-  transform: translateY(-2px);
+.action-buttons button {
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
-
 
 @media (max-width: 768px) { 
     .about-gallery {
