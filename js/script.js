@@ -2,7 +2,41 @@
 
 console.log("JS is working");
 
-document.getElementById("btnAdopt").addEventListener("click", () => {
+const welcomeMessage = document.getElementById("welcome-message");
+
+function updateWelcomeMessage(message) {
+  welcomeMessage.textContent = message;
+ 
+  function handleUserAction(type) {
+  if (type === "adopt") {
+    const name = prompt("What is your name?");
+    updateWelcomeMessage(
+      name
+        ? `Welcome, ${name}! Thanks for choosing to adopt 🐾`
+        : "Welcome, future adopter! 🐶"
+    );
+
+   } else if (type === "volunteer") {
+    updateWelcomeMessage(
+      "Nice to meet you future volunteer — paw shake on it! 🐾"
+    );
+
+  } else if (type === "surrender") {
+    updateWelcomeMessage(
+      "Thanks for trusting us. Let's help your pet find a loving home 🐕"
+    );
+  }
+}  
+
+document.getElementById("btnAdopt")
+  .addEventListener("click", () => handleUserAction("adopt"));
+
+document.getElementById("btnVolunteer")
+  .addEventListener("click", () => handleUserAction("volunteer"));
+
+document.getElementById("btnSurrender")
+  .addEventListener("click", () => handleUserAction("surrender"));
+  
   const name = prompt("I am looking to adopt?");
   const subtitle = document.getElementById("subtitle");
  
