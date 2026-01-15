@@ -306,6 +306,46 @@ footer {
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/* Rating box */
+#rating-box {
+  max-width: 300px;
+  padding: 20px;
+  margin: 40px;
+  background-color: #efe575;
+  border: 3px dashed #c8a98a;
+  border-radius: 10px;
+  font-size: 0.99rem;
+}
+
+/* Rating button */
+#btnRate {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #c8560a;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Right-side image column */
+#rating-images {
+  position: fixed;
+  right: 20px;
+  top: 160px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Rating images */
+#rating-images img {
+  width: 100px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
 @media (max-width: 768px) { 
     .about-gallery {
         flex-direction: column;
