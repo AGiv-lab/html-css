@@ -44,8 +44,58 @@ document.getElementById("btnSurrender")
     ? `Welcome, ${Adopter}! 🎄`
     : "Welcome, friend! 🎄";
 };
+img.src = "images/paw-rating.png";
 
+document.getElementById("btnRate").addEventListener("click", function () {
 
+  const rating = prompt("Rate our website from 1 to 5 paws 🐾");
+  const ratingMessage = document.getElementById("rating-message");
+  const ratingImages = document.getElementById("rating-images");
+
+  ratingImages.innerHTML = "";
+
+  if (rating === null) {
+    ratingMessage.textContent = "🐾🐾🐾🐾🐾";
+    return;
+  }
+
+   if (rating < 1 || rating > 5) {
+    ratingMessage.textContent = "Please enter a number between 1 and 5 🐶";
+    return;
+  }
+
+  /* FOR LOOP — one image repeated per rating */
+  for (let i = 0; i < rating; i++) {
+    const img = document.createElement("img");
+    img.src = "images/paw-rating.png";
+    img.alt = "Happy dog paw rating";
+    ratingImages.appendChild(img);
+  }
+
+  /* Rating responses */
+  if (rating == 1) {
+    ratingMessage.textContent =
+      "1 side-eye 👀 — we hear you and we’re working on it!
+  } else if (rating == 2) {
+    ratingMessage.textContent =
+      "2 wags — Puppy training in progress!";
+";
+
+       } else if (rating == 3) {
+    ratingMessage.textContent =
+      "🐶 Woof woof woof! — thanks, friend!";
+
+  } else if (rating == 4) {
+    ratingMessage.textContent =
+      "4 tail wags! 🚗 That’s a car ride!";
+
+      
+  } else if (rating == 5) {
+    ratingMessage.textContent =
+      "5 WOOFS!! 🐕 Straight to the park!";
+  }
+
+});
 /* Welcome prompts with 3 choices
 
 const welcomeMessage = document.querySelector("#welcome-message");

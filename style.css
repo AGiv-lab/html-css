@@ -328,21 +328,29 @@ footer {
   cursor: pointer;
 }
 
-/* Right-side image column */
+/* Rating container */
+#rating-box {
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #eee392;
+  border: 3px solid #814102;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Image row at bottom */
 #rating-images {
-  position: fixed;
-  right: 20px;
-  top: 160px;
-  width: 120px;
+  margin: 40px auto;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+ justify-content: center;
+  gap: 15px;
 }
 
 /* Rating images */
 #rating-images img {
-  width: 100px;
-  border-radius: 8px;
+  width: 90px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
