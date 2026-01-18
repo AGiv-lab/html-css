@@ -46,26 +46,14 @@ const btnSurrender = document.getElementById("btnSurrender");
 if (btnSurrender) {
   btnSurrender.addEventListener("click", () => handleUserAction("surrender"));
 }
-// ---------- BUTTON EVENTS ----------
-const btnAdopt = document.getElementById("btnAdopt");
-if (btnAdopt) {
-  btnAdopt.addEventListener("click", () => handleUserAction("adopt"));
-}
 
-const btnVolunteer = document.getElementById("btnVolunteer");
-if (btnVolunteer) {
-  btnVolunteer.addEventListener("click", () => handleUserAction("volunteer"));
-}
-
-const btnSurrender = document.getElementById("btnSurrender");
-if (btnSurrender) {
-  btnSurrender.addEventListener("click", () => handleUserAction("surrender"));
-}
 // ---------- RATING SYSTEM ----------
 const btnRate = document.getElementById("btnRate");
 
 if (btnRate) {
   btnRate.addEventListener("click", () => {
+    console.log = prompt("Rating button clicked");
+
     const rating = prompt("Rate our website from 1 to 5 🐾");
     const ratingMessage = document.getElementById("rating-message");
     const ratingImages = document.getElementById("rating-images");
@@ -81,6 +69,7 @@ if (btnRate) {
     }
 
     const numericRating = Number(rating);
+    console.log("User rating:", numericRating);
 
     // Validate input
     if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
@@ -119,8 +108,4 @@ if (btnRate) {
     }
   });
 }
-// ----------Debugging ----------
-console.log("Rating button clicked");
-console.log("User rating:", numericRating);
-
 
