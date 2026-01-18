@@ -4,6 +4,9 @@ console.log("JS is working");
 
 // ---------- ELEMENTS ----------
 const welcomeMessage = document.getElementById("welcome-message");
+const ratingMessage = document.getElementById("rating-message");
+const ratingImages = document.getElementById("rating-images");
+
 
 // ---------- FUNCTIONS ----------
 function updateWelcomeMessage(message) {
@@ -12,92 +15,132 @@ function updateWelcomeMessage(message) {
   }
 }
 
+function isValidRating(value) {
+  return Number.isInteger(value) && value >= 1 && value <= 5;
+}
+
+function createRatingImage(container) {
+  const img = document.createElement("img");
+  img.src = "img/dog-paws-up.avif";
+  img.alt = "Dog sitting with paws in the air";
+  container.appendChild(img);
+}
+
 function handleUserAction(type) {
   const name = prompt("What is your name?");
   const displayName = name ? name : "friend";
 
-  switch (type) {
-    case "adopt":
-      updateWelcomeMessage(
-        `Welcome, ${displayName}! Thanks for choosing to adopt 🐾`
-      );
-      break;
+  const messages = {
+    adopt: `Welcome, ${displayName}! Thanks for choosing to adopt 🐾`,
+    volunteer: `Welcome, ${displayName}! Thanks for volunteering 🐾`,
+    surrender: `Thank you, ${displayName}. We’ll help your pet find a loving home 🐕`
+  };
 
-    case "volunteer":
-      updateWelcomeMessage(
-        `Welcome, ${displayName}! Thanks for volunteering 🐾`
-      );
-      break;
-
-    case "surrender":
-      updateWelcomeMessage(
-        `Thank you, ${displayName}. We’ll help your pet find a loving home 🐕`
-      );
-      break;
-  }
+  updateWelcomeMessage(messages[type]);
 }
 
 // ---------- BUTTON EVENTS ----------
-const btnAdopt = document.getElementById("btnAdopt");
-if (btnAdopt) {
-  btnAdopt.addEventListener("click", () => handleUserAction("adopt"));
-}
+document.getElementById("btnAdopt")
+  ?.addEventListener("click", () => handleUserAction("adopt"));
 
-const btnVolunteer = document.getElementById("btnVolunteer");
-if (btnVolunteer) {
-  btnVolunteer.addEventListener("click", () => handleUserAction("volunteer"));
-}
+document.getElementById("btnVolunteer")
+  ?.addEventListener("click", () => handleUserAction("volunteer"));
 
-const btnSurrender = document.getElementById("btnSurrender");
-if (btnSurrender) {
-  btnSurrender.addEventListener("click", () => handleUserAction("surrender"));
-}
+document.getElementById("btnSurrender")
+  ?.addEventListener("click", () => handleUserAction("surrender"));
+
+document.getElementById("btnRate")
+  ?.addEventListener("click", () => {
+    const rating = prompt("Rate our website from 1 to 5 🐾");
+
+    ratingImages.innerHTML = "";
+    ratingMessage.textContent = "";
+
+    if (rating === null) {
+      ratingMessage.textContent = "No rating given — still friends 🐶";
+      return;
+    }
+
+    const numericRating = Number(rating);
+
+    if (!isValidRating(numericRating)) {
+      ratingMessage.textContent = "Please enter a whole number from 1 to 5 🐕";
+      return;
+    }
+
+    console.log("Rating button clicked");
+    console.log("User rating:", numericRating);
+
+    createRatingImage(ratingImages);
+
+    const ratingMessages = {
+      1: "1 Woof 🐾 — Sad eyes. We’ll do better!",
+      2: "2 Woofs 🐾 — Still in puppy training!",
+      3: "3 Woofs 🐾 — Tail wagging!",
+      4: "4 Woofs 🐾 — Going for a ride!",
+      5: "5 Woofs 🐾 — Going to the park!! 🐕"
+    };
+
+    ratingMessage.textContent = ratingMessages[numericRating];
+  });
 
 // ---------- RATING SYSTEM ----------
 const btnRate = document.getElementById("btnRate");
 
 if (btnRate) {
   btnRate.addEventListener("click", () => {
-   
-  const rating = prompt("Rate our website from 1 to 5 🐾");
+    const rating = prompt("Rate our website from 1 to 5 🐾");
 
-  const ratingMessage = document.getElementById("rating-message");
+    const ratingMessage = document.getElementById("rating-message");
+    const ratingImages = document.getElementById("rating-images");
 
-  const ratingImages = document.getElementById("rating-images");
+    // Reset output
+    ratingImages.innerHTML = "";
+    ratingMessage.textContent = "";
 
-// Clear previous output
-  ratingImages.innerHTML = "";
-  ratingMessage.textContent = "";
+    if (rating === null) {
+      ratingMessage.textContent = "No rating given — still friends 🐶";
+      return;
+    }
 
-// User canceled
-  if (rating === null) {
-  ratingMessage.textContent = "No rating given — still friends 🐶";
-  return;
-}
+    const numericRating = Number(rating);
 
-  const numericRating = Number(rating);
-
-  // Validate input 
-  if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
+    if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
       ratingMessage.textContent = "Please enter a whole number from 1 to 5 🐕";
       return;
     }
+
     console.log("Rating button clicked");
     console.log("User rating:", numericRating);
 
-    // Create image per rating
-     const numericRating = Number(rating);
-
+    // Create ONE image
     const img = document.createElement("img");
-      img.src = "img/Dog-paws-up.avif";
-      img.alt = "Dog sitting with paws in the air";
+    img.src = "img/dog-paws-up.avif"; // rename file to match
+    img.alt = "Dog sitting with paws in the air";
 
-      ratingImages.appendChild(img);
+    ratingImages.appendChild(img);
 
-      ratingMessage.textContent = `${numericRating} paw${numericRating > 1 ? "s" : ""}! 🐾`;
-  });
+    // Rating messages
+    const messages = {
+      1: "1 Woof 🐾 — Sad eyes. We’ll do better!",
+      2: "2 Woofs 🐾 — Still in puppy training!",
+      3: "3 Woofs 🐾 — Tail wagging!",
+      4: "4 Woofs 🐾 — Going for a ride!",
+      5: "5 Woofs 🐾 — Going to the park!! 🐕"
+    };
+    function isValidRating(value) {
+    return Number.isInteger(value) && value >= 1 && value <= 5;
+}
+function createRatingImage(container) {
+  const img = document.createElement("img");
+  img.src = "img/dog-paws-up.avif";
+  img.alt = "Dog sitting with paws in the air";
+  container.appendChild(img);
 }
 
+    ratingMessage.textContent = messages[numericRating];
+  });
+}
 
     // ----------Rating messages----------
     switch (numericRating) {
