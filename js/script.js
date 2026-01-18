@@ -28,7 +28,7 @@ function handleUserAction(type) {
 
   } else if (type === "surrender") {
     updateWelcomeMessage(
-      `Thanks for trusting us, ${userName}. We'll help your pet find a loving home 🐕`
+      `Thanks for trusting us, ${userName}. Let's get your pet rehomed!🐕`
     );
   }
 }
@@ -54,9 +54,10 @@ const btnRate = document.getElementById("btnRate");
 
 if (btnRate) {
   btnRate.addEventListener("click", () => {
-    console.log = prompt("Rating button clicked");
+   
 
     const rating = prompt("Rate our website from 1 to 5 🐾");
+
     const ratingMessage = document.getElementById("rating-message");
     const ratingImages = document.getElementById("rating-images");
 
@@ -71,7 +72,7 @@ if (btnRate) {
     }
 
     const numericRating = Number(rating);
-    console.log("User rating:", numericRating);
+    
 
     // Validate input
     if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
@@ -79,35 +80,39 @@ if (btnRate) {
       return;
     }
 
-    // Create ONE image
-    const img = document.createElement("img");
-    img.src = "images/dog-paws-up.jpg"; // <-- your image
-    img.alt = "Dog sitting with paws in the air";
-    ratingImages.appendChild(img);
+    // Create image per rating
+   for (let i = 0; i < numericRating; i++) {
+      const img = document.createElement("img");
+      img.src = "images/dog-paws-up.jpg";
+      img.alt = "Dog sitting with paws in the air";
+      ratingImages.appendChild(img);
+    }
+
 
     // ----------Rating messages----------
     switch (numericRating) {
       case 1:
         ratingMessage.textContent =
-          "1 paw 🐾 — Oof. We’ll do better!";
+          "1 Woof 🐾 — Sad eyes. We’ll do better!";
         break;
       case 2:
         ratingMessage.textContent =
-          "2 paws 🐾 — Still learning!";
+          "2 Woofs 🐾 — Still in puppy training!";
         break;
       case 3:
         ratingMessage.textContent =
-          "3 paws 🐾 — Not bad at all!";
+          "3 Woofs 🐾 — Tail wagging!";
         break;
       case 4:
         ratingMessage.textContent =
-          "4 paws 🐾 — Tail wagging!";
+          "4 Woofs 🐾 — Going for a ride!";
         break;
       case 5:
         ratingMessage.textContent =
-          "5 paws 🐾 — Best day ever!! 🐕";
+          "5 Woofs 🐾 — Going to the park!! 🐕";
         break;
     }
+    ratingMessage.textContent = messages[numericRating];
   });
 }
 
