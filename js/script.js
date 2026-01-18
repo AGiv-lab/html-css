@@ -61,5 +61,66 @@ const btnSurrender = document.getElementById("btnSurrender");
 if (btnSurrender) {
   btnSurrender.addEventListener("click", () => handleUserAction("surrender"));
 }
+// ---------- RATING SYSTEM ----------
+const btnRate = document.getElementById("btnRate");
+
+if (btnRate) {
+  btnRate.addEventListener("click", () => {
+    const rating = prompt("Rate our website from 1 to 5 🐾");
+    const ratingMessage = document.getElementById("rating-message");
+    const ratingImages = document.getElementById("rating-images");
+
+    // Clear previous output
+    ratingImages.innerHTML = "";
+    ratingMessage.textContent = "";
+
+    // User canceled
+    if (rating === null) {
+      ratingMessage.textContent = "No rating given — still friends 🐶";
+      return;
+    }
+
+    const numericRating = Number(rating);
+
+    // Validate input
+    if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
+      ratingMessage.textContent = "Please enter a whole number from 1 to 5 🐕";
+      return;
+    }
+
+    // Create ONE image
+    const img = document.createElement("img");
+    img.src = "images/dog-paws-up.jpg"; // <-- your image
+    img.alt = "Dog sitting with paws in the air";
+    ratingImages.appendChild(img);
+
+    // ----------Rating messages----------
+    switch (numericRating) {
+      case 1:
+        ratingMessage.textContent =
+          "1 paw 🐾 — Oof. We’ll do better!";
+        break;
+      case 2:
+        ratingMessage.textContent =
+          "2 paws 🐾 — Still learning!";
+        break;
+      case 3:
+        ratingMessage.textContent =
+          "3 paws 🐾 — Not bad at all!";
+        break;
+      case 4:
+        ratingMessage.textContent =
+          "4 paws 🐾 — Tail wagging!";
+        break;
+      case 5:
+        ratingMessage.textContent =
+          "5 paws 🐾 — Best day ever!! 🐕";
+        break;
+    }
+  });
+}
+// ----------Debugging ----------
+console.log("Rating button clicked");
+console.log("User rating:", numericRating);
 
 
