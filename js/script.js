@@ -13,20 +13,22 @@ function updateWelcomeMessage(message) {
 }
 
 function handleUserAction(type) {
+  const name = prompt("What is your name?");
+  const userName = name ? name : "Friend";
+
   if (type === "adopt") {
-    const name = prompt("What is your name?");
     updateWelcomeMessage(
-      name
-        ? `Welcome, ${name}! Thanks for choosing to adopt 🐾`
-        : "Welcome, future adopter! 🐶"
+      `Welcome, ${userName}! Thanks for choosing to adopt 🐾`
     );
+
   } else if (type === "volunteer") {
     updateWelcomeMessage(
-      "Nice to meet you future volunteer — paw shake on it! 🐾"
+      `Welcome, ${userName}! Thanks for volunteering — paw shake on it! 🐾`
     );
+
   } else if (type === "surrender") {
     updateWelcomeMessage(
-      "Thanks for trusting us. Let's help your pet find a loving home 🐕"
+      `Thanks for trusting us, ${userName}. We'll help your pet find a loving home 🐕`
     );
   }
 }
