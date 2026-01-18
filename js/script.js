@@ -14,22 +14,26 @@ function updateWelcomeMessage(message) {
 
 function handleUserAction(type) {
   const name = prompt("What is your name?");
-  const userName = name ? name : "Friend";
+  const displayName = name ? name : "friend";
 
-  if (type === "adopt") {
-    updateWelcomeMessage(
-      `Welcome, ${userName}! Thanks for choosing to adopt 🐾`
-    );
+  switch (type) {
+    case "adopt":
+      updateWelcomeMessage(
+        `Welcome, ${displayName}! Thanks for choosing to adopt 🐾`
+      );
+      break;
 
-  } else if (type === "volunteer") {
-    updateWelcomeMessage(
-      `Welcome, ${userName}! Thanks for volunteering — paw shake on it! 🐾`
-    );
+    case "volunteer":
+      updateWelcomeMessage(
+        `Welcome, ${displayName}! Thanks for volunteering 🐾`
+      );
+      break;
 
-  } else if (type === "surrender") {
-    updateWelcomeMessage(
-      `Thanks for trusting us, ${userName}. Let's get your pet rehomed!🐕`
-    );
+    case "surrender":
+      updateWelcomeMessage(
+        `Thank you, ${displayName}. We’ll help your pet find a loving home 🐕`
+      );
+      break;
   }
 }
 
@@ -55,38 +59,44 @@ const btnRate = document.getElementById("btnRate");
 if (btnRate) {
   btnRate.addEventListener("click", () => {
    
+  const rating = prompt("Rate our website from 1 to 5 🐾");
 
-    const rating = prompt("Rate our website from 1 to 5 🐾");
+  const ratingMessage = document.getElementById("rating-message");
 
-    const ratingMessage = document.getElementById("rating-message");
-    const ratingImages = document.getElementById("rating-images");
+  const ratingImages = document.getElementById("rating-images");
 
-    // Clear previous output
-    ratingImages.innerHTML = "";
-    ratingMessage.textContent = "";
+// Clear previous output
+  ratingImages.innerHTML = "";
+  ratingMessage.textContent = "";
 
-    // User canceled
-    if (rating === null) {
-      ratingMessage.textContent = "No rating given — still friends 🐶";
-      return;
-    }
+// User canceled
+  if (rating === null) {
+  ratingMessage.textContent = "No rating given — still friends 🐶";
+  return;
+}
 
-    const numericRating = Number(rating);
-    
+  const numericRating = Number(rating);
 
-    // Validate input
-    if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
+  // Validate input 
+  if (!Number.isInteger(numericRating) || numericRating < 1 || numericRating > 5) {
       ratingMessage.textContent = "Please enter a whole number from 1 to 5 🐕";
       return;
     }
+    console.log("Rating button clicked");
+    console.log("User rating:", numericRating);
 
     // Create image per rating
-   for (let i = 0; i < numericRating; i++) {
-      const img = document.createElement("img");
-      img.src = "images/dog-paws-up.jpg";
+     const numericRating = Number(rating);
+
+    const img = document.createElement("img");
+      img.src = "img/Dog-paws-up.avif";
       img.alt = "Dog sitting with paws in the air";
+
       ratingImages.appendChild(img);
-    }
+
+      ratingMessage.textContent = `${numericRating} paw${numericRating > 1 ? "s" : ""}! 🐾`;
+  });
+}
 
 
     // ----------Rating messages----------
@@ -113,6 +123,7 @@ if (btnRate) {
         break;
     }
     ratingMessage.textContent = messages[numericRating];
+    }
   });
 }
 
