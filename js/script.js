@@ -20,7 +20,7 @@ function isValidRating(value) {
 
 function createRatingImage(container) {
   const img = document.createElement("img");
-  img.src = "img/dog-paws-up.jpg";
+  img.src = "/img/dog-paws-up.jpg";
   img.alt = "Dog sitting with paws in the air";
   container.appendChild(img);
 }
@@ -34,6 +34,15 @@ function handleUserAction(type) {
     volunteer: `Welcome, ${displayName}! Thanks for volunteering 🐾`,
     surrender: `Thank you, ${displayName}. Let's help your pet find a loving home 🐕`
   };
+
+  document.getElementById("btnAdopt")
+  ?.addEventListener("click", () => handleUserAction("adopt"));
+
+document.getElementById("btnVolunteer")
+  ?.addEventListener("click", () => handleUserAction("volunteer"));
+
+document.getElementById("btnSurrender")
+  ?.addEventListener("click", () => handleUserAction("surrender"));
 
   updateWelcomeMessage(messages[type]);
 }
