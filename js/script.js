@@ -20,7 +20,7 @@ function isValidRating(value) {
 
 function createRatingImage(container) {
   const img = document.createElement("img");
-  img.src = "/img/dog-paws-up.jpg";
+  img.src = "js/dog-paws-up.jpg";
   img.alt = "Dog sitting with paws in the air";
   container.appendChild(img);
 }
@@ -35,6 +35,10 @@ function handleUserAction(type) {
     surrender: `Thank you, ${displayName}. Let's help your pet find a loving home 🐕`
   };
 
+    updateWelcomeMessage(messages[type]);
+}
+
+//----------Action Button Events----------
   document.getElementById("btnAdopt")
   ?.addEventListener("click", () => handleUserAction("adopt"));
 
@@ -44,10 +48,7 @@ document.getElementById("btnVolunteer")
 document.getElementById("btnSurrender")
   ?.addEventListener("click", () => handleUserAction("surrender"));
 
-  updateWelcomeMessage(messages[type]);
-}
-
-// ---------- BUTTON EVENTS ----------
+// ---------- RATING BUTTON ----------
 document.getElementById("btnRate")
   ?.addEventListener("click", () => {
     const rating = prompt("Rate our website from 1 to 5 🐾");
@@ -67,10 +68,6 @@ document.getElementById("btnRate")
       return;
     }
 
-    console.log("Rating button clicked");
-    console.log("User rating:", numericRating);
-
-    // -----Repeat image based on rating--------
     for (let i = 0; i < numericRating; i++) {
       createRatingImage(ratingImages);
     }
