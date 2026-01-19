@@ -39,15 +39,6 @@ function handleUserAction(type) {
 }
 
 // ---------- BUTTON EVENTS ----------
-document.getElementById("btnAdopt")
-  ?.addEventListener("click", () => handleUserAction("adopt"));
-
-document.getElementById("btnVolunteer")
-  ?.addEventListener("click", () => handleUserAction("volunteer"));
-
-document.getElementById("btnSurrender")
-  ?.addEventListener("click", () => handleUserAction("surrender"));
-
 document.getElementById("btnRate")
   ?.addEventListener("click", () => {
     const rating = prompt("Rate our website from 1 to 5 🐾");
@@ -58,7 +49,6 @@ document.getElementById("btnRate")
     if (rating === null) {
       ratingMessage.textContent = "No rating given — still friends 🐶";
       return;
-
     }
 
     const numericRating = Number(rating);
@@ -71,7 +61,10 @@ document.getElementById("btnRate")
     console.log("Rating button clicked");
     console.log("User rating:", numericRating);
 
-    createRatingImage(ratingImages);
+    // -----Repeat image based on rating--------
+    for (let i = 0; i < numericRating; i++) {
+      createRatingImage(ratingImages);
+    }
 
     const ratingMessages = {
       1: "1 Woof 🐾 — Sad eyes. We can do better!",
@@ -81,7 +74,8 @@ document.getElementById("btnRate")
       5: "5 Woofs 🐾 — Going to the park!! 🐕"
     };
 
-  ratingMessage.textContent = messages[numericRating];
+    ratingMessage.textContent = ratingMessages[numericRating];
   });
+
 
 
