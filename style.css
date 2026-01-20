@@ -257,13 +257,6 @@ footer {
   color: #9f03a4;
 }
 
-.action-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 20px auto;
-}
-
 .action-buttons button {
   padding: 0.7rem 1.4rem;
   font-size: 1rem;
@@ -271,8 +264,9 @@ footer {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
+
 #btnAdopt {
   background-color: #f4bfa4;
   color: #a74102;
