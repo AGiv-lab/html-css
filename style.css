@@ -306,17 +306,6 @@ footer {
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Rating box */
-#rating-box {
-  max-width: 300px;
-  padding: 20px;
-  margin: 40px;
-  background-color: #efe575;
-  border: 3px dashed #c8a98a;
-  border-radius: 10px;
-  font-size: 0.99rem;
-}
-
 /* Rating button */
 #btnRate {
   margin-top: 10px;
