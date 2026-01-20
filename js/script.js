@@ -20,7 +20,7 @@ function isValidRating(value) {
 
 function createRatingImage(container) {
   const img = document.createElement("img");
-  img.src = "/images/dog-paws-up.jpg";
+  img.src = "..images/dog-paws-up.jpg";
   img.alt = "Dog sitting with paws in the air";
   container.appendChild(img);
 }
