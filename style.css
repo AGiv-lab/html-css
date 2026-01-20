@@ -250,7 +250,10 @@ footer {
   justify-content: center;
   gap: 1rem;
   margin: 20px auto;
-}
+ /* Why: allow the flex container to span the page so centering is reliable */
+  width: 100%;
+} 
+
 /* Styles for the buttons inside the action-buttons container */
 .action-buttons button {
   padding: 0.7rem 1.4rem;
