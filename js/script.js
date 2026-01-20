@@ -20,9 +20,7 @@ function isValidRating(value) {
 
 function createRatingImage(container) {
   const img = document.createElement("img");
-  const path = "../images/dog-paws-up.jpg";
-  console.log("Trying to load:", path);
-  img.src = path;
+  img.src = "images/dog-paws-up.jpg";
   img.alt = "Dog sitting with paws in the air";
   container.appendChild(img);
 }
