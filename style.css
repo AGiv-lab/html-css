@@ -339,26 +339,20 @@ footer {
   text-align: center;
 }
 
-/* Image row at bottom */
-#rating-images {
-  margin: 40px auto;
-  display: flex;
- justify-content: center;
-  gap: 15px;
-}
-
-/* --- Rating Images --- */
+/* === Rating images polish (force override) === */
 #rating-images {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 12px;
-  margin-top: 12px;
+  margin-top: 16px;
   flex-wrap: wrap;
 }
 
 #rating-images img {
-  width: 70px;
-  height: auto;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
