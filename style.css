@@ -186,11 +186,6 @@ h3::after {
 
  }
 
- .text-box {
-     padding: 10px;
-
- }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -211,20 +206,19 @@ h3::after {
     transition: transform 0.3s ease;
 }
 
-.card:hover .image-box img{
-    transform: scale(1.05);
-
-}
-
 .text-box {
-    margin-top: 10px;
-
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .text-box p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #555;
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.card:hover .image-box img{
+    transform: scale(1.05);
 
 }
 
