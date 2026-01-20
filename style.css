@@ -1,4 +1,7 @@
-body {
+/* =========================
+   Base / Reset
+   ========================= */
+ body {
     margin: 0;
     padding: 0;
     background-color:#ecd7c3;
@@ -8,7 +11,9 @@ body {
     color: #333;
 
 }
-
+/* =========================
+   Typography
+   ========================= */
 h1 {
     font-size: 3rem;
     color: #5b014d;
@@ -22,10 +27,31 @@ h2 {
     text-align: center;
 }
 
+    h1 {
+        font-size: 2.3rem;
+    }
+}
+
+h3 { 
+    text-align: center;
+    color: #6b451d;
+}
+
+h3::after {
+    content:"";
+    display: block;
+    width: 60%;
+    height: 1px;
+    background: #c8a98a;
+    margin: 15px auto;
+}
+
 p {
     margin-bottom: 16px;
 }
-
+/* =========================
+   Links
+   ========================= */
 a {
     text-decoration: none;
     color: #6b451d;
@@ -45,7 +71,9 @@ a:hover {
   color: #1f4f2d;
   text-decoration: underline; 
 }
-
+/* =========================
+   Layout: Header + Nav
+   ========================= */
 header {
     padding: 10px 0; 
 }
@@ -73,8 +101,16 @@ nav a {
     font-weight: bold;
 
 }
-
-
+.about-page nav {
+    background-color: #dcb1d2;
+    border-bottom: 2px solid #5b014d;
+    }
+        .about-page .go-home {
+        color: #0f970b;
+    }
+/* =========================
+   Components: Hero / Featured / Figures
+   ========================= */
 .hero-card {
     max-width: 800px;
     margin: 40px auto;
@@ -90,20 +126,6 @@ nav a {
     height: auto;
     margin: 20px 0;
     border-radius: 8px;
-}
-
-h3 { 
-    text-align: center;
-    color: #6b451d;
-}
-
-h3::after {
-    content:"";
-    display: block;
-    width: 60%;
-    height: 1px;
-    background: #c8a98a;
-    margin: 15px auto;
 }
 
 .featured { 
@@ -138,8 +160,10 @@ h3::after {
     color: #555;
 
 }
-
-.about {
+/* =========================
+   Components: About Gallery Cards
+   ========================= */
+   .about {
   color: #8e0393; 
 
 }
@@ -148,15 +172,6 @@ h3::after {
     color: #5b014d;
 
  }
-
-.about-page nav {
-    background-color: #dcb1d2;
-    border-bottom: 2px solid #5b014d;
-    }
-
-    .about-page .go-home {
-        color: #0f970b;
-    }
 
 .about-gallery {
     max-width: 900px;
@@ -183,7 +198,6 @@ h3::after {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 
 }
-
 .image-box {
     height: 200px;
     overflow: hidden;
@@ -200,6 +214,11 @@ h3::after {
   transition: transform 0.3s ease;
 }
 
+.card:hover .image-box img{
+    transform: scale(1.05);
+
+}
+
 .text-box {
   margin-top: 10px;
   padding: 10px;
@@ -211,10 +230,6 @@ h3::after {
   color: #555;
 }
 
-.card:hover .image-box img{
-    transform: scale(1.05);
-
-}
 
 article {
     max-width: 900px;
@@ -224,15 +239,9 @@ article {
     color: #555;
 
 }
-
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    background-color: #e3c6a8;
-
-}
-
+/* =========================
+   Components: Welcome + Actions + Rating
+   ========================= */
 #welcome-message {
   max-width: 800px;
   margin: 20px auto;
@@ -333,15 +342,23 @@ footer {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) { 
+/* =========================
+   Footer
+   ========================= */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #e3c6a8;
+
+}
+/* =========================
+   Responsive
+   ========================= */
+   @media (max-width: 768px) { 
     .about-gallery {
         flex-direction: column;
     }
     .card {
         text-align: center;
     }
-
-    h1 {
-        font-size: 2.3rem;
-    }
-}
