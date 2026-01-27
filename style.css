@@ -115,7 +115,7 @@ nav a {
     max-width: 800px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #fff7ec;
+    background-color: #f7ecdd;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     text-align: center;
@@ -230,9 +230,21 @@ nav a {
   color: #555;
 }
 
+/* Make the top about “intro card” centered and wide */
+.intro-card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0;  
+}
+
+/* Make only the image area taller */
 .intro-card .image-box {
-  height: 350px;
-  
+  height: 320px;
+}
+
+/* Make the text area feel like the gallery cards */
+.intro-card .text-box {
+  padding: 15px;
 }
 
 article {
