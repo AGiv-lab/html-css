@@ -9,6 +9,9 @@ const ratingImages = document.getElementById("rating-images");
 const btnTreat = document.getElementById("btnTreat");
 const treatCountSpan = document.getElementById("treat-count");
 
+console.log("btnTreat is:", btnTreat);
+console.log("treatCountSpan is:", treatCountSpan);
+
 // ---------- FUNCTIONS ----------
 function updateWelcomeMessage(message) {
   if (welcomeMessage) {
@@ -93,6 +96,7 @@ document.getElementById("btnRate")
 
     ratingMessage.textContent = ratingMessages[numericRating];
   });
+
 
 
 
