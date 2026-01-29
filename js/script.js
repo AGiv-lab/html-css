@@ -67,8 +67,9 @@ btnTreat?.addEventListener("click", () => {
     // clear old icons
     treatIcons.innerHTML = "";
 
-    // FOR LOOP — show one paw per treat
-    for (let i = 0; i < treatCount; i++) {
+    // FOR LOOP — show one cookie per treat
+
+   for (let i = 0; i < treatCount; i++) {
   const treat = document.createElement("span");
   treat.textContent = "🍪";
   treat.style.fontSize = "32px";
