@@ -55,10 +55,38 @@ document.getElementById("btnVolunteer")
 document.getElementById("btnSurrender")
   ?.addEventListener("click", () => handleUserAction("surrender"));
 
-  btnTreat?.addEventListener("click", () => {
+ btnTreat?.addEventListener("click", () => {
   if (treatCount < 10) {
     treatCount++;
     treatCountSpan.textContent = String(treatCount);
+
+    const treatIcons = document.getElementById("treat-icons");
+    treatIcons.innerHTML = "";
+
+for (let i = 0; i < treatCount; i++) {
+  const img = document.createElement("img");
+  img.src = "images/dog-paws-up.jpg";
+  img.alt = "Happy dog with paws up";
+  img.style.width = "50px";
+  img.style.borderRadius = "8px";
+  treatIcons.appendChild(img);
+  }
+ }
+});
+
+    // clear old icons
+    const treatIcons = document.getElementById("treat-icons");
+    treatIcons.innerHTML = "";
+
+    // FOR LOOP — show one paw per treat
+    for (let i = 0; i < treatCount; i++) {
+      const img = document.createElement("img");
+      img.src = "images/dog-paws-up.jpg";
+      img.alt = "Happy dog with paws up";
+      img.style.width = "50px";
+      img.style.borderRadius = "8px";
+      treatIcons.appendChild(img);
+    }
   }
 });
 
