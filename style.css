@@ -325,9 +325,27 @@ article {
   cursor: pointer;
 }
 
+/* Put Rating + Treat side-by-side on larger screens */
+.tools-row {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* stacks nicely on small screens */
+}
+
+/* Let each box fit nicely in the row */
+#rating-box,
+#treat-box {
+  width: 350px;
+  margin: 0; /* row handles spacing now */
+}
+
 /* Rating container */
 #rating-box {
-  max-width: 350px;
+  width: 350px;
   margin: 40px auto;
   padding: 20px;
   background-color: #eee392;
@@ -355,7 +373,7 @@ article {
 
 /* Treat counter box */
 #treat-box {
-  max-width: 350px;
+  width: 350px;
   margin: 40px auto;
   padding: 20px;
   background-color: #fde7b3;
@@ -370,6 +388,28 @@ article {
   gap: 10px;
   margin-top: 15px;
   flex-wrap: wrap;
+}
+
+#btnTreat {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #c8560a;
+  color: #fff;
+  cursor: pointer;
+}
+
+#btnTreat:hover {
+  background-color: #a74a08;
+}
+
+#treat-box p {
+  color: #814102; /* rust/dark orange */
+}
+
+#treat-count {
+  color: #814102;
 }
 
 /* =========================
