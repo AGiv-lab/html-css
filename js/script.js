@@ -6,6 +6,8 @@ console.log("JS is working");
 const welcomeMessage = document.getElementById("welcome-message");
 const ratingMessage = document.getElementById("rating-message");
 const ratingImages = document.getElementById("rating-images");
+const btnTreat = document.getElementById("btnTreat");
+const treatCountSpan = document.getElementById("treat-count");
 
 // ---------- FUNCTIONS ----------
 function updateWelcomeMessage(message) {
@@ -37,6 +39,8 @@ function handleUserAction(type) {
 
     updateWelcomeMessage(messages[type]);
 }
+ 
+let treatCount = 0;
 
 //----------Action Button Events----------
   document.getElementById("btnAdopt")
@@ -47,6 +51,13 @@ document.getElementById("btnVolunteer")
 
 document.getElementById("btnSurrender")
   ?.addEventListener("click", () => handleUserAction("surrender"));
+
+  btnTreat?.addEventListener("click", () => {
+  if (treatCount < 10) {
+    treatCount++;
+    treatCountSpan.textContent = String(treatCount);
+  }
+});
 
 // ---------- RATING BUTTON ----------
 document.getElementById("btnRate")
