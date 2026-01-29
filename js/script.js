@@ -69,13 +69,11 @@ btnTreat?.addEventListener("click", () => {
 
     // FOR LOOP — show one paw per treat
     for (let i = 0; i < treatCount; i++) {
-      const img = document.createElement("img");
-      img.src = "images/dog-paws-up.jpg";
-      img.alt = "Happy dog with paws up";
-      img.style.width = "50px";
-      img.style.borderRadius = "8px";
-      treatIcons.appendChild(img);
-    }
+  const treat = document.createElement("span");
+  treat.textContent = "🍪";
+  treat.style.fontSize = "32px";
+  treatIcons.appendChild(treat);
+  }
   }
 }); 
 
