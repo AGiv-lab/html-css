@@ -332,15 +332,17 @@ article {
   display: flex;
   gap: 20px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   flex-wrap: wrap; /* stacks nicely on small screens */
 }
 
-/* Let each box fit nicely in the row */
 #rating-box,
 #treat-box {
   width: 350px;
-  margin: 0; /* row handles spacing now */
+  margin: 0;              /* row handles spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Rating container */
