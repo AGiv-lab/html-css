@@ -58,6 +58,7 @@ document.getElementById("btnSurrender")
 btnTreat?.addEventListener("click", () => {
   if (treatCount < 10) {
     treatCount++;
+    console.log("Treat clicked. Count =", treatCount);
     treatCountSpan.textContent = String(treatCount);
 
     const treatIcons = document.getElementById("treat-icons");
